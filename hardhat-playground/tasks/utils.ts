@@ -1,8 +1,8 @@
 import "dotenv/config";
 
 import { ethers, JsonRpcProvider } from "ethers";
-import { LOCAL_GETH_ADDRESS, MAINNET_INFURA_URL, SEPOLIA_INFURA_URL, WALLET_PRIVATE_KEY } from "./env-variables.ts";
 import { Wallet } from "ethers";
+import { LOCAL_GETH_ADDRESS, WALLET_PRIVATE_KEY } from "../env-variables";
 
 const generateNewWallet = () => {
     // 0xD37595240a7685BbEB95f7ecF7C7faC4566c3028
@@ -27,7 +27,7 @@ const getWallet = () => {
     return new Wallet(WALLET_PRIVATE_KEY || '')    
 }
 
-const getSigner = (provider, wallet) => {
+const getSigner = (provider: JsonRpcProvider, wallet: Wallet) => {
   return wallet.connect(provider)
 };
 

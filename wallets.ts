@@ -40,7 +40,7 @@ console.log('signing key', wallet.signingKey)
 // console.log(await wallet.signMessage('Hello world'))
 
 const provider = new JsonRpcProvider(SEPOLIA_INFURA_URL)
-// const provider = new JsonRpcProvider(ATG_NODE_ADDRESS)
+// const provider = new JsonRpcProvider(LOCAL_GETH_ADDRESS)
 
 const signer = wallet.connect(provider)
 // const signedMessage = await signer.signMessage('Hello world')
